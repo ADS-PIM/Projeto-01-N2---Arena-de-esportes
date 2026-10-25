@@ -13,7 +13,7 @@
     height: auto;
 }
 
-.btn-cadastro {
+.btn-register {
     min-width: 314px;
     min-height: 77px;
     padding: 17px 35px;
@@ -26,8 +26,24 @@
     cursor: pointer;
 }
 
-.btn-cadastro:hover {
+.btn-register:hover {
     background-color: #245c4e;
+}
+
+.btn-goBack {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: transparent;
+    border: none;
+    color: #153e35;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.btn-goBack:hover {
+    text-decoration: underline;
 }
 
 @media (max-width: 650px) {
@@ -42,10 +58,15 @@
         height: auto;
     }
 
-    .btn-cadastro {
+    .btn-register {
         min-width: auto;
         min-height: 50px;
         padding: 12px;
         font-size: 12px;
+    }
+
+    .btn-goBack {
+        font-size: 12px;
+        gap: 5px;
     }
 }

@@ -8,12 +8,12 @@ const Header = ({ pagina, mudarPagina}) => {
         <img src="/logo.png" alt="" className="header-logo" />
 
         {pagina === "inicio" ? (
-            <button className="btn-cadastro" onClick={() => mudarPagina("cadastro")}>
-                Quero me Cadastrar ↗
+            <button className="btn-register" onClick={() => mudarPagina("cadastro")}>
+                Quero me Cadastrar 🡥
             </button>
         ) : (
-            <button className="btn-cadastro" onClick={() => mudarPagina("inicio")}>
-                ← Voltar para o início
+            <button className="btn-goBack" onClick={() => mudarPagina("inicio")}>
+                🡠 Voltar para o início
             </button>
         )}
         
