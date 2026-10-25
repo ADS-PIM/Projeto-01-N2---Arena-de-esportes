@@ -1,0 +1,51 @@
+.header {
+    width: 100%;
+    min-height: 147px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 50px;
+    background-color: #f5f3ea;
+}
+
+.header.logo {
+    width: 290px;
+    height: auto;
+}
+
+.btn-cadastro {
+    min-width: 314px;
+    min-height: 77px;
+    padding: 17px 35px;
+    background-color: #153e35;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 19px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-cadastro:hover {
+    background-color: #245c4e;
+}
+
+@media (max-width: 650px) {
+    .header {
+        min-height: 100px;
+        gap: 15px;
+        padding: 20px 5px;
+    }
+
+    .header-logo {
+        width: 200px;
+        height: auto;
+    }
+
+    .btn-cadastro {
+        min-width: auto;
+        min-height: 50px;
+        padding: 12px;
+        font-size: 12px;
+    }
+}
