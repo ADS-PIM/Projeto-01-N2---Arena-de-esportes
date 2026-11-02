@@ -1,0 +1,429 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@500;600&display=swap');
+
+.register-page {
+    --register-green: #153e35;
+    --register-muted: #5d6b64;
+    --register-border: #d8ddcf;
+    --register-error: #b72b1d;
+    --register-error-background: #fcf0eb;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #f5f3ea;
+    color: var(--register-green);
+    font-family: 'Inter', Arial, sans-serif;
+}
+
+.register-content {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1fr);
+    align-items: center;
+    gap: clamp(40px, 8.6vw, 112px);
+    width: 100%;
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 40px clamp(24px, 4.5vw, 64px) 46px;
+}
+
+.register-page #register-image {
+    position: relative;
+    isolation: isolate;
+    display: flex;
+    flex-direction: column;
+    align-self: stretch;
+    width: 100%;
+    min-width: 0;
+    min-height: 688px;
+    aspect-ratio: 447 / 688;
+    overflow: hidden;
+    padding: 32px;
+    background-color: var(--register-green);
+    color: #f5f3ea;
+}
+
+.register-page #register-image > img,
+.register-page #register-image::after {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.register-page #register-image > img {
+    object-fit: cover;
+    object-position: center;
+}
+
+.register-page #register-image::after {
+    content: '';
+    background: linear-gradient(180deg, rgb(12 51 47 / 78%) 0%, rgb(12 51 47 / 22%) 38%, rgb(12 51 47 / 4%) 56%, rgb(12 43 35 / 78%) 100%);
+}
+
+.register-page #image-tagline {
+    margin-bottom: 22px;
+    color: #e3ef73;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+.register-page #image-title {
+    font-family: 'Oswald', 'Arial Narrow', sans-serif;
+    font-size: clamp(48px, 4.85vw, 60px);
+    font-weight: 500;
+    line-height: 1.12;
+    letter-spacing: -1px;
+}
+
+.register-page .image-caption {
+    margin-top: auto;
+    padding-top: 48px;
+}
+
+.register-page .image-subtitle {
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+.register-page .image-sports {
+    margin-top: 18px;
+    border-top: 1px solid rgb(245 243 234 / 24%);
+    padding-top: 16px;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.register-page #register-area {
+    width: 100%;
+    max-width: 580px;
+    min-width: 0;
+}
+
+.register-page .register-eyebrow {
+    margin-bottom: 11px;
+    color: var(--register-muted);
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+.register-page #register-title {
+    margin-bottom: 11px;
+    font-family: 'Oswald', 'Arial Narrow', sans-serif;
+    font-size: clamp(37px, 3.8vw, 48px);
+    font-weight: 600;
+    line-height: 1.14;
+    letter-spacing: -0.5px;
+}
+
+.register-page .register-subtitle {
+    color: var(--register-muted);
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+.register-page #register-form {
+    margin-top: 22px;
+}
+
+.register-page .register-required,
+.register-page .register-hint,
+.register-page .register-privacy {
+    color: var(--register-muted);
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.register-page .register-required {
+    margin-bottom: 13px;
+}
+
+.register-page .register-field {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    margin-bottom: 12px;
+}
+
+.register-page .register-field label,
+.register-page .register-modalities legend {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+.register-page .register-field input {
+    width: 100%;
+    min-width: 0;
+    height: 46px;
+    border: 1px solid var(--register-border);
+    border-radius: 5px;
+    padding: 11px 13px;
+    background-color: #fffefa;
+    color: var(--register-green);
+    font: inherit;
+    font-size: 14px;
+    transition: border-color 150ms ease, box-shadow 150ms ease;
+}
+
+.register-page .register-field input::placeholder {
+    color: var(--register-muted);
+    opacity: 1;
+}
+
+.register-page .register-field input:focus-visible {
+    outline: 2px solid var(--register-green);
+    outline-offset: 2px;
+    border-color: var(--register-green);
+}
+
+.register-page .register-modalities {
+    min-width: 0;
+    margin: 0;
+    border: 0;
+    padding: 0;
+}
+
+.register-page .register-modalities legend {
+    margin-bottom: 7px;
+    padding: 0;
+}
+
+.register-page #modalities {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 9px;
+}
+
+.register-page .modality-option {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 47px;
+    border: 1px solid var(--register-border);
+    border-radius: 5px;
+    padding: 11px 10px;
+    background-color: #fffefa;
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1.4;
+    cursor: pointer;
+    transition: border-color 150ms ease, background-color 150ms ease;
+}
+
+.register-page .modality-option input {
+    appearance: none;
+    flex-shrink: 0;
+    width: 15px;
+    height: 15px;
+    margin: 0;
+    border: 1px solid #74817a;
+    border-radius: 50%;
+    background-color: #fffefa;
+    cursor: pointer;
+}
+
+.register-page .modality-option input:checked {
+    border-color: var(--register-green);
+    background-color: var(--register-green);
+    box-shadow: inset 0 0 0 3px #fffefa;
+}
+
+.register-page .modality-option:hover,
+.register-page .modality-option:has(input:checked) {
+    border-color: var(--register-green);
+    background-color: #eef1e7;
+}
+
+.register-page .modality-option:has(input:focus-visible) {
+    outline: 2px solid var(--register-green);
+    outline-offset: 3px;
+}
+
+.register-page .register-hint {
+    margin-top: 9px;
+}
+
+.register-page .register-privacy {
+    display: flex;
+    align-items: flex-start;
+    gap: 9px;
+    margin: 20px 0 13px;
+}
+
+.register-page .register-privacy svg {
+    flex-shrink: 0;
+    width: 15px;
+    height: 17px;
+}
+
+.register-page .register-submit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    min-height: 49px;
+    border: 0;
+    border-radius: 5px;
+    padding: 13px 22px;
+    background-color: var(--register-green);
+    color: #fffefa;
+    font: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 150ms ease;
+}
+
+.register-page .register-submit svg {
+    width: 18px;
+    height: 18px;
+}
+
+.register-page .register-submit:hover {
+    background-color: #245c4e;
+}
+
+.register-page .register-submit:focus-visible {
+    outline: 2px solid var(--register-green);
+    outline-offset: 3px;
+}
+
+.register-page .register-input-wrapper {
+    position: relative;
+}
+
+.register-page .register-field input[aria-invalid='true'] {
+    border-color: var(--register-error);
+    padding-right: 40px;
+    background-color: var(--register-error-background);
+}
+
+.register-page .register-field input[aria-invalid='true']:focus-visible {
+    outline-color: var(--register-error);
+}
+
+.register-page .register-error-icon {
+    position: absolute;
+    top: 50%;
+    right: 14px;
+    display: grid;
+    place-items: center;
+    width: 14px;
+    height: 14px;
+    transform: translateY(-50%);
+    border: 1.5px solid currentColor;
+    border-radius: 50%;
+    color: var(--register-error);
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 1;
+    pointer-events: none;
+}
+
+.register-page .register-error {
+    color: var(--register-error);
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.register-page .register-modalities[aria-invalid='true'] .modality-option {
+    border-color: var(--register-error);
+    background-color: var(--register-error-background);
+}
+
+.register-page .register-modalities[aria-invalid='true'] .modality-option input {
+    border-color: var(--register-error);
+}
+
+.register-page .register-modalities[aria-invalid='true'] .modality-option:has(input:focus-visible) {
+    outline-color: var(--register-error);
+}
+
+@media (max-width: 1000px) {
+    .register-content {
+        gap: 40px;
+    }
+
+    .register-page #register-image {
+        min-height: 640px;
+        padding: 28px;
+    }
+
+    .register-page #image-title {
+        font-size: 48px;
+    }
+
+    .register-page .modality-option {
+        gap: 5px;
+        padding-inline: 7px;
+    }
+}
+
+@media (max-width: 760px) {
+    .register-content {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 36px;
+        max-width: 600px;
+        padding: 20px 24px 40px;
+    }
+
+    .register-page #register-image {
+        min-height: 560px;
+        aspect-ratio: auto;
+    }
+
+    .register-page #image-title {
+        font-size: clamp(46px, 10vw, 60px);
+    }
+
+    .register-page #register-title {
+        font-size: 40px;
+    }
+
+    .register-page .register-field input {
+        height: 46px;
+        font-size: 14px;
+    }
+
+    .register-page .modality-option {
+        min-height: 47px;
+    }
+
+    .register-page .register-submit {
+        min-height: 49px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 400px) {
+    .register-content {
+        padding-inline: 16px;
+    }
+
+    .register-page #register-image {
+        min-height: 520px;
+        padding: 24px;
+    }
+
+    .register-page #modalities {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .register-page .modality-option {
+        gap: 10px;
+        padding-inline: 12px;
+        font-size: 12px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .register-page .register-field input,
+    .register-page .modality-option,
+    .register-page .register-submit {
+        transition: none;
+    }
+}

@@ -1,27 +1,30 @@
 .header {
     width: 100%;
-    min-height: 147px;
+    min-height: 72px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 30px 50px;
+    gap: 24px;
+    padding: 10px clamp(20px, 4vw, 64px);
     background-color: #f5f3ea;
 }
 
-.header.logo {
-    width: 290px;
+.header-logo {
+    display: block;
+    width: 210px;
     height: auto;
 }
 
 .btn-register {
-    min-width: 314px;
-    min-height: 77px;
-    padding: 17px 35px;
+    flex-shrink: 0;
+    min-height: 48px;
+    padding: 12px 24px;
     background-color: #153e35;
     color: white;
     border: none;
     border-radius: 10px;
-    font-size: 19px;
+    font-size: 15px;
+    line-height: 1.4;
     font-weight: bold;
     cursor: pointer;
 }
@@ -32,13 +35,15 @@
 
 .btn-goBack {
     display: flex;
+    flex-shrink: 0;
     align-items: center;
+    min-height: 44px;
     gap: 10px;
     background: transparent;
     border: none;
     color: #153e35;
     font-size: 13px;
-    font-weight: 500;
+    font-weight: 700;
     cursor: pointer;
 }
 
@@ -48,20 +53,19 @@
 
 @media (max-width: 650px) {
     .header {
-        min-height: 100px;
-        gap: 15px;
-        padding: 20px 5px;
+        min-height: 64px;
+        gap: 12px;
+        padding: 8px 16px;
     }
 
     .header-logo {
-        width: 200px;
-        height: auto;
+        width: clamp(112px, 34vw, 160px);
+        min-width: 0;
     }
 
     .btn-register {
-        min-width: auto;
-        min-height: 50px;
-        padding: 12px;
+        min-height: 44px;
+        padding: 10px 12px;
         font-size: 12px;
     }
 
