@@ -1,9 +1,7 @@
-import Header from '../components/Header/Header'
-import Footer from '../components/Footer/Footer'
-import registerImage from '../assets/register_img.png'
+import { useState } from 'react'
+import registerImage from '../../assets/register_img.png'
 import './RegisterPage.css'
-import { useState } from 'react';
-import { validateRegistration } from '../utils/registerValidation';
+import { validateRegistration } from '../../utils/registerValidation'
 
 const RegisterPage = () => {
 
@@ -38,7 +36,6 @@ const RegisterPage = () => {
 
     return (
         <div className="register-page">
-            <Header />
             <main className="register-content">
                 <aside id="register-image">
                     <img src={registerImage} alt="Duas pessoas caminhando em uma quadra de areia" />
@@ -122,7 +119,6 @@ const RegisterPage = () => {
                     </div>
                 </section>
             </main>
-            <Footer />
         </div>
     )
 }

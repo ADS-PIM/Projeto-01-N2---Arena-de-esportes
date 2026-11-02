@@ -1,15 +1,32 @@
+import { useState } from 'react'
 import './App.css'
-import RegisterPage from './pages/RegisterPage';
+
+import Header from './components/Header/Header'
+import Footer from './components/Footer/Footer'
+import HomePage from './pages/homePage/HomePage'
+import RegisterPage from './pages/registerPage/RegisterPage'
 
 function App() {
 
-  // const [pagina, setPagina] = useState("inicio")
+    const [pagina, setPagina] = useState("inicio")
 
-  return (
-    <div className="app">
-        <RegisterPage/>
-    </div>
-  )
+    return (
+        <div className="app">
+
+            <Header pagina={pagina} mudarPagina={setPagina}/>
+
+            <main>
+                {pagina === "inicio" ? (
+                    <HomePage mudarPagina={setPagina}/>
+                ) : (
+                    <RegisterPage/>
+                )}
+            </main>
+
+            <Footer/>
+
+        </div>
+    )
 }
 
 export default App
