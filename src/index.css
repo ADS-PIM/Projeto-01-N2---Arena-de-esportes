@@ -8,3 +8,7 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     background-color: #f5f3ea;
 }
+
+button {
+    font-family: inherit;
+}
