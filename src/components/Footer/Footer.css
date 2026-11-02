@@ -1,71 +1,82 @@
 .footer {
     width: 100%;
-    margin-top: auto;
-    padding: 28px clamp(20px, 4vw, 64px);
+    height: 120px;
+    box-sizing: border-box;
+    padding: 0 5%;
     background-color: #f5f3ea;
 }
 
 .footer-content {
+    height: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 24px;
+    gap: 30px;
+    border-top: 1px solid #d8dcd1;
 }
 
 .footer-logo {
-    display: block;
-    flex-shrink: 0;
-    width: 190px;
+    width: 200px;
     height: auto;
+    object-fit: contain;
     filter: brightness(0);
 }
 
 .footer-info {
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
     justify-content: flex-end;
-    gap: 12px 28px;
+    gap: 40px;
     color: #74817a;
-    font-size: 13px;
-    line-height: 1.5;
+    font-size: 14px;
 }
 
 .privacy {
-    color: #174338;
+    color: #153e35;
 }
 
 .slogan {
-    font-size: 11px;
+    font-size: 13px;
 }
 
 @media (max-width: 900px) {
+    .footer {
+        height: auto;
+        min-height: 120px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
     .footer-content {
         flex-direction: column;
-        gap: 20px;
-        text-align: center;
+        align-items: flex-start;
+        gap: 25px;
+        padding-top: 20px;
     }
 
     .footer-info {
-        justify-content: center;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        gap: 20px;
     }
 }
 
 @media (max-width: 650px) {
     .footer {
-        padding: 24px 16px;
+        min-height: 90px;
+        padding: 20px 5%;
     }
 
     .footer-logo {
-        width: 160px;
+        width: 150px;
     }
 
     .footer-info {
-        gap: 10px 20px;
+        gap: 15px;
         font-size: 12px;
     }
 
     .slogan {
-        flex-basis: 100%;
+        font-size: 11px;
     }
 }
