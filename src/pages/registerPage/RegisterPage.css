@@ -425,3 +425,14 @@
         transition: none;
     }
 }
+.register-page .register-success {
+    margin-top: 16px;
+    border: 1px solid var(--register-green);
+    border-radius: 8px;
+    padding: 14px 16px;
+    background-color: #e8f0e5;
+    color: var(--register-green);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.6;
+}

@@ -10,6 +10,7 @@ const RegisterPage = () => {
     const [phone, setPhone] = useState('');
     const [modalities, setModalities] = useState([]);
     const [hasSubmitted, setHasSubmitted] = useState(false);
+    const [isRegistered, setIsRegistered] = useState(false);
     const errors = hasSubmitted ? validateRegistration({ name, email, phone, modalities }) : {};
 
     const handleModalityChange = (event) => {
@@ -24,6 +25,7 @@ const RegisterPage = () => {
     const submitForm = (event) => {
         event.preventDefault();
         setHasSubmitted(true);
+        setIsRegistered(false);
         const validationErrors = validateRegistration({ name, email, phone, modalities });
         const firstInvalidField = Object.keys(validationErrors)[0];
 
@@ -32,6 +34,8 @@ const RegisterPage = () => {
             event.currentTarget.querySelector(`#${fieldName}`)?.focus();
             return;
         }
+
+        setIsRegistered(true);
     }
 
     return (
@@ -52,7 +56,7 @@ const RegisterPage = () => {
                     <p className="register-subtitle">Preencha seus dados e escolha seus esportes favoritos.</p>
                     <div id="register-form">
                         <p className="register-required">* Todos os campos são obrigatórios.</p>
-                        <form onSubmit={submitForm} noValidate>
+                        <form onSubmit={submitForm} onChange={() => setIsRegistered(false)} noValidate>
                             <div className="register-field">
                                 <label htmlFor="name">Nome completo *</label>
                                 <div className="register-input-wrapper">
@@ -115,6 +119,11 @@ const RegisterPage = () => {
                                     <path d="M7 17 17 7M7 7h10v10" />
                                 </svg>
                             </button>
+                            <div role="status" aria-live="polite" aria-atomic="true">
+                                {isRegistered && (
+                                    <p className="register-success">Cadastro realizado com sucesso!</p>
+                                )}
+                            </div>
                         </form>
                     </div>
                 </section>
