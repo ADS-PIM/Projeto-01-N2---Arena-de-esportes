@@ -13,6 +13,7 @@ const Diferenciais = () => {
         </div>
 
         <div className="diferenciais-lista">
+
             <div className="diferencial-item">
                 <div className="diferencial-icone">☀</div>
                 <div className="diferencial-texto">
@@ -36,6 +37,7 @@ const Diferenciais = () => {
                     <p>Uma arena para dividir a quadra,conhecer pessoas e fazer do esporte parte da sua rotina.</p>
                 </div>
             </div>
+            
         </div>
     </div>
 

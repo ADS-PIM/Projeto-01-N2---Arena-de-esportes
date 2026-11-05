@@ -13,9 +13,9 @@ const Footer = () => {
 
             <p>© 2026 Arena Brisa</p>
 
-            <span className="privacy">
+            <p className="privacy">
               Privacidade e dados
-            </span>
+            </p>
 
             <p className="slogan">
               FEITA PARA O SEU MOVIMENTO
