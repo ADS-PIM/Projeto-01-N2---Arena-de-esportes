@@ -71,3 +71,13 @@
         gap: 5px;
     }
 }
+.header-logo-link {
+    display: inline-flex;
+    flex-shrink: 0;
+    border-radius: 4px;
+}
+
+.header-logo-link:focus-visible {
+    outline: 2px solid #153e35;
+    outline-offset: 5px;
+}

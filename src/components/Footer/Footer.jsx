@@ -1,13 +1,13 @@
-import React from 'react'
+
 import './Footer.css'
 
-const Footer = () => {
+const Footer = ({ mudarPagina }) => {
   return (
     <div className="footer">
 
         <div className="footer-content">
 
-          <img src="/logo.png" alt="" className="footer-logo"/>
+          <a href="/" className="footer-logo-link" aria-label="Arena Brisa - página principal" onClick={(event) => { event.preventDefault(); mudarPagina("inicio"); window.scrollTo(0, 0); }}><img src="/logo.png" alt="Arena Brisa" className="footer-logo" /></a>
 
           <div className="footer-info">
 

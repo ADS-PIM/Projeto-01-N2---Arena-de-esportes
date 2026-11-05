@@ -1,11 +1,11 @@
-import React from 'react'
+
 import './Header.css'
 
 const Header = ({ pagina, mudarPagina}) => {
   return (
     <div className="header">
 
-        <img src="/logo.png" alt="" className="header-logo" />
+        <a href="/" className="header-logo-link" aria-label="Arena Brisa - página principal" onClick={(event) => { event.preventDefault(); mudarPagina("inicio"); window.scrollTo(0, 0); }}><img src="/logo.png" alt="Arena Brisa" className="header-logo" /></a>
 
         {pagina === "inicio" ? (
             <button className="btn-register" onClick={() => mudarPagina("cadastro")}>
