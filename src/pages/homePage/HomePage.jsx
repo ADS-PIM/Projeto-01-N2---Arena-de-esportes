@@ -29,7 +29,7 @@ const HomePage = ({ mudarPagina }) => {
         <div className="home-banner">
           <img src="/banner.png" alt="" className="banner-imagem" />
             <div className="banner-conteudo">
-                <p className="banner-destaque">● ESPORTE AO AR LIVRE. VIDA EM MOVIMENTO.</p>
+                <p className="banner-destaque"><span className="banner-destaque-ponto">●</span> ESPORTE AO AR LIVRE. VIDA EM MOVIMENTO.</p>
                 <h1>SEU PRÓXIMO <br/> PONTO DE <br/> ENCONTRO.</h1>
                 <p className="banner-descricao">Uma pausa na rotina. Um novo jeito de se mover. Na Arena Brisa, o esporte e as boas conexões se encontram na areia.</p>
 
