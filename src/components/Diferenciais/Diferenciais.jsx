@@ -1,4 +1,5 @@
-import React from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowRight, faSun, faUsers } from '@fortawesome/free-solid-svg-icons'
 import './Diferenciais.css'
 
 const Diferenciais = () => {
@@ -15,7 +16,7 @@ const Diferenciais = () => {
         <div className="diferenciais-lista">
 
             <div className="diferencial-item">
-                <div className="diferencial-icone">☀</div>
+                <div className="diferencial-icone"><FontAwesomeIcon icon={faSun} aria-hidden="true" /></div>
                 <div className="diferencial-texto">
                     <h3>Ar livre. Energia de sobra.</h3>
                     <p>Sinta o sol, a brisa e a liberdade de praticar esporte fora das quatro paredes.</p>
@@ -23,7 +24,7 @@ const Diferenciais = () => {
             </div>
 
             <div className="diferencial-item">
-                <div className="diferencial-icone">↗</div>
+                <div className="diferencial-icone"><FontAwesomeIcon icon={faArrowRight} transform={{ rotate: -45 }} aria-hidden="true" /></div>
                 <div className="diferencial-texto">
                     <h3>Seu começo tem espaço aqui.</h3>
                     <p>Não precisa chegar sabendo tudo. A vontade de se movimentar já é um ótimo primeiro passo.</p>
@@ -31,7 +32,7 @@ const Diferenciais = () => {
             </div>
 
             <div className="diferencial-item">
-                <div className="diferencial-icone">♙</div>
+                <div className="diferencial-icone"><FontAwesomeIcon icon={faUsers} aria-hidden="true" /></div>
                 <div className="diferencial-texto">
                     <h3>Mais jogo, mais conexão</h3>
                     <p>Uma arena para dividir a quadra,conhecer pessoas e fazer do esporte parte da sua rotina.</p>

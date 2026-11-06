@@ -308,17 +308,10 @@
     position: absolute;
     top: 50%;
     right: 14px;
-    display: grid;
-    place-items: center;
     width: 14px;
     height: 14px;
     transform: translateY(-50%);
-    border: 1.5px solid currentColor;
-    border-radius: 50%;
     color: var(--register-error);
-    font-size: 10px;
-    font-weight: 700;
-    line-height: 1;
     pointer-events: none;
 }
 

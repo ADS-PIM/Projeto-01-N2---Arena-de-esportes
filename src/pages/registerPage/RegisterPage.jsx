@@ -1,4 +1,6 @@
 import { useState } from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowRight, faCircleExclamation, faLock } from '@fortawesome/free-solid-svg-icons'
 import registerImage from '../../assets/register_img.png'
 import './RegisterPage.css'
 import { validateRegistration } from '../../utils/registerValidation'
@@ -36,6 +38,11 @@ const RegisterPage = () => {
         }
 
         setIsRegistered(true);
+        setName('');
+        setEmail('');
+        setPhone('');
+        setModalities([]);
+        setHasSubmitted(false);
     }
 
     return (
@@ -60,28 +67,28 @@ const RegisterPage = () => {
                             <div className="register-field">
                                 <label htmlFor="name">Nome completo *</label>
                                 <div className="register-input-wrapper">
-                                    <input type="text" id="name" name="name" autoComplete="name" placeholder="Digite seu nome e sobrenome" required value={name} onChange={(e) => setName(e.target.value)} aria-invalid={Boolean(errors.name)} aria-describedby={errors.name ? 'name-error' : undefined} />
-                                    {errors.name && <span className="register-error-icon" aria-hidden="true">!</span>}
+                                    <input type="text" id="name" name="name" placeholder="Digite seu nome e sobrenome" required value={name} onChange={(e) => setName(e.target.value)} />
+                                    {errors.name && <FontAwesomeIcon icon={faCircleExclamation} className="register-error-icon" aria-hidden="true" />}
                                 </div>
-                                {errors.name && <p id="name-error" className="register-error" aria-live="polite">{errors.name}</p>}
+                                {errors.name && <p id="name-error" className="register-error">{errors.name}</p>}
                             </div>
 
                             <div className="register-field">
                                 <label htmlFor="email">E-mail *</label>
                                 <div className="register-input-wrapper">
-                                    <input type="email" id="email" name="email" autoComplete="email" placeholder="seuemail@exemplo.com" required value={email} onChange={(e) => setEmail(e.target.value)} aria-invalid={Boolean(errors.email)} aria-describedby={errors.email ? 'email-error' : undefined} />
-                                    {errors.email && <span className="register-error-icon" aria-hidden="true">!</span>}
+                                    <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com" required value={email} onChange={(e) => setEmail(e.target.value)} />
+                                    {errors.email && <FontAwesomeIcon icon={faCircleExclamation} className="register-error-icon" aria-hidden="true" />}
                                 </div>
-                                {errors.email && <p id="email-error" className="register-error" aria-live="polite">{errors.email}</p>}
+                                {errors.email && <p id="email-error" className="register-error">{errors.email}</p>}
                             </div>
 
                             <div className="register-field">
                                 <label htmlFor="phone">Telefone *</label>
                                 <div className="register-input-wrapper">
-                                    <input type="tel" id="phone" name="phone" autoComplete="tel" placeholder="(11) 99999-9999" required value={phone} onChange={(e) => setPhone(e.target.value)} aria-invalid={Boolean(errors.phone)} aria-describedby={errors.phone ? 'phone-error' : undefined} />
-                                    {errors.phone && <span className="register-error-icon" aria-hidden="true">!</span>}
+                                    <input type="tel" id="phone" name="phone" placeholder="(11) 99999-9999" required value={phone} onChange={(e) => setPhone(e.target.value)} />
+                                    {errors.phone && <FontAwesomeIcon icon={faCircleExclamation} className="register-error-icon" aria-hidden="true" />}
                                 </div>
-                                {errors.phone && <p id="phone-error" className="register-error" aria-live="polite">{errors.phone}</p>}
+                                {errors.phone && <p id="phone-error" className="register-error">{errors.phone}</p>}
                             </div>
 
                             <fieldset className="register-modalities" aria-invalid={Boolean(errors.modalities)} aria-describedby={errors.modalities ? 'modalities-error' : 'modalities-hint'}>
@@ -101,25 +108,20 @@ const RegisterPage = () => {
                                     </label>
                                 </div>
                                 {errors.modalities ? (
-                                    <p id="modalities-error" className="register-error register-hint" aria-live="polite">{errors.modalities}</p>
+                                    <p id="modalities-error" className="register-error register-hint">{errors.modalities}</p>
                                 ) : (
                                     <p id="modalities-hint" className="register-hint">Escolha as modalidades que você mais quer praticar.</p>
                                 )}
                             </fieldset>
                             <div className="register-privacy">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                                    <rect x="5" y="10" width="14" height="11" rx="2" />
-                                    <path d="M8 10V7a4 4 0 0 1 8 0v3M12 14v3" />
-                                </svg>
+                                <FontAwesomeIcon icon={faLock} aria-hidden="true" />
                                 <p>Seus dados serão usados para registrar seu interesse e para contatos da Arena Brisa. Saiba mais em Privacidade e dados.</p>
                             </div>
                             <button className="register-submit" type="submit">
                                 Cadastrar
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                                    <path d="M7 17 17 7M7 7h10v10" />
-                                </svg>
+                                <FontAwesomeIcon icon={faArrowRight} transform={{ rotate: -45 }} aria-hidden="true" />
                             </button>
-                            <div role="status" aria-live="polite" aria-atomic="true">
+                            <div role="status">
                                 {isRegistered && (
                                     <p className="register-success">Cadastro realizado com sucesso!</p>
                                 )}

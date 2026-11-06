@@ -1,4 +1,6 @@
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons'
 import './Header.css'
 
 const Header = ({ pagina, mudarPagina}) => {
@@ -9,11 +11,11 @@ const Header = ({ pagina, mudarPagina}) => {
 
         {pagina === "inicio" ? (
             <button className="btn-register" onClick={() => mudarPagina("cadastro")}>
-                Quero me Cadastrar 🡥
+                Quero me Cadastrar <FontAwesomeIcon icon={faArrowRight} transform={{ rotate: -45 }} aria-hidden="true" />
             </button>
         ) : (
             <button className="btn-goBack" onClick={() => mudarPagina("inicio")}>
-                🡠 Voltar para o início
+                <FontAwesomeIcon icon={faArrowLeft} aria-hidden="true" /> Voltar para o início
             </button>
         )}
         
